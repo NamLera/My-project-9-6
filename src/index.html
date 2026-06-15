@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_sidebar.css">
+</head>
+<body>
+
+    <!--Menu-->
+        <div class="sidebar">
+        <header class="sidebar-header">
+            <img class="icon" src="./icon/burger.svg" alt="burger X">
+            <img class="logo" src="./icon/Group.svg" alt="logo">
+            <img class="icon" src="./icon/search.svg" alt="поиск">
+        </header>
+
+        <main class="sidebar-content">
+            <ul class="navigations">
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Ремонт техники</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Услуги и сервисы</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Корпоративным клиентам</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Продавцам техники</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Партнерам</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Производителям</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Наши сервисные центры</span>
+                    </a>
+                </li>
+                <li class="navigation">
+                    <a href="#" class="nav-link">
+                        <span class="nav-indicator"></span>
+                        <span class="link">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+        </main>
+
+            <div class="sidebar-footer">
+                <div class="sidebar-footer__icon ">
+                    <img class="icon" src="./icon/profile.svg" alt="profile">
+                    <img class="icon" src="./icon/chat copy.svg" alt="phone">
+                    <img class="icon" src="./icon/chat.svg" alt="chat">
+                </div>
+    
+                <div class="sidebar-footer__contact">
+                    <div class="sidebar-footer__email">mail@cps.com</div>
+                    <div class="sidebar-footer__phone">8 800 890 8900</div>
+                </div>
+    
+                <div class="sidebar-footer__lang">
+                    <span class="lang lang--active"><button>RU</button></span>
+                    <span class="lang"><button>EN</button></span>
+                    <span class="lang"><button>CH</button></span>
+                </div>
+            </div>
+        
+
+    </div>
+
+
+
+
+    <!--Header-->
+    <header class="site-header">
+        <div class="site-header__inner">
+
+            <div class="site-header__left">
+                <button class="icon" id="mainMenuOpen">
+                    <img src="./icon/burger 1.svg" alt="Меню">
+                </button>
+                <div class="site-header__divider tablet-only"></div>
+                <div class="site-header__logo">
+                    <a href="#"><img src="./icon/Group.svg" alt="CPS logo"></a>
+                </div>
+            </div>
+
+                <div class="site-header__divider-2 tablet-only"></div>
+
+
+            
+            <div class="site-header__right">
+                <button class="icon tablet-only">
+                    <img src="./icon/chat copy.svg" alt="Телефон">
+                </button>
+                <button class="icon tablet-only">
+                    <img src="./icon/chat.svg" alt="Чат">
+                </button>
+                <button class="icon tablet-only">
+                    <img src="./icon/profile.svg" alt="Профиль">
+                </button>
+
+                <div class="site-header__divider tablet-only"></div>
+                <button class="icon">
+                    <img src="./icon/repair.svg" alt="Заявка">
+                </button>
+                <button class="icon">
+                    <img src="./icon/checkstatus.svg" alt="Статус">
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!--Main-->
+    <main class="services-page">
+
+        <div class="services-page__top">
+            <h1 class="services-page__title">Услуги и сервисы</h1>
+    
+    
+            <nav class="services-page__actions">
+                <button class="actions">
+                    Оставить заявку
+                    <span class="icon">
+                        <img src="./icon/repair.svg" alt="Заявка">
+                    </span>
+                </button>
+                <button class="actions">
+                    Статус ремонта
+                    <span class="icon">
+                        <img src="./icon/checkstatus.svg" alt="Статус">
+                    </span>
+                </button>
+            </nav>
+        </div>
+
+
+        <ul class="tabs__list">
+            <li><button class="taps__item tabs__item--active">Ремонтируемые бренды</button></li>
+            <li><button class="taps__item">Ремонтируемые устройства</button></li>
+            <li><button class="taps__item">Дополнительные услуги</button></li>
+            <li><button class="taps__item">Цены на услуги</button></li>
+            <li><button class="taps__item">Адреса сервисных центров</button></li>
+            <li><button class="taps__item">Отзывы</button></li>
+        </ul>
+
+        <section class="service-content">
+            <div class="service-content__body">
+                <p class="service-content__text">
+                    Мы являемся авторизованным сервисным центром по ремонту техники Dell. Только у нас вы можете отремонтировать свой ноутбук Dell с официальной гарантией производителя.
+                </p>
+                <p class="service-content__text">
+                    Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, советуют нас родным и близким.
+                </p>
+
+                <button class="expand">
+                    <img src="./icon/expand (далее).svg">
+                    Читать далее
+                </button>
+            </div>
+                    <img class="service-content__images" src="./image/MG_3223.svg" alt="CPS Image">
+        </section>
+    
+
+
+
+    <!--My-project-8-5-->
+    <!--Бренд-->
+    <div class="brands-section">
+        <h1 class="swiper-title">Ремонт техники различных брендов</h1>
+        <div class="swiper mySwiper-brands">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/lenovo logo.svg" alt="Lenovo" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/samsung logo.svg" alt="Samsung" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/iphone logo.svg" alt="iPhone" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/viewsonic logo.svg" alt="ViewSonic" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/bosch logo.svg" alt="Bosch" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/hp logo.svg" alt="HP" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/acer logo.svg" alt="Acer" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/sony logo.svg" alt="Sony" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/lenovo logo.svg" alt="Lenovo" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/samsung logo.svg" alt="Samsung" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="brands-card">
+                        <img src="./logo/iphone logo.svg" alt="iPhone" class="swiper-card-logo">
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+            </div>
+<div class="swiper-pagination"></div>
+        </div> 
+        
+    <button class="expand-all" id="showBrands" type="button">
+        <img src="./logo/expand.svg" alt="expand">Показать все
+    </button>
+    <button class="expand-all" id="hideBrands" style="display:none">
+        <img src="./logo/expand icon.svg" alt="expand">Скрыть
+    </button>
+
+
+    <!--Техники-->
+        <h1 class="swiper-title">Ремонт различных видов техники</h1>
+        <div class="swiper mySwiper-devices">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт ноутбуков .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт планшетов .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт ПК .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт мониторов .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт ноутбуков .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт планшетов .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт ПК .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="#" class="devices-card">
+                        <span class="swiper-card-text">Ремонт мониторов .</span>
+                        <img src="./logo/go icon.svg" alt="arrow" class="arrow">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+                <button class="expand-all" id="showDevices" >
+                    <img src="./logo/expand.svg" alt="expand">Показать все
+                </button>
+                <button class="expand-all" id="hideDevices" style="display:none">
+                    <img src="./logo/expand icon.svg" alt="expand">Скрыть
+                </button>
+    
+</main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
