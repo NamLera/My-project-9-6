@@ -86,6 +86,8 @@ hideDevices.addEventListener('click', function () {
 
 
 var swiperServicePrices = new Swiper('.mySwiper-serviceprices', {
+    slidesPerView: 1.1,
+    spaceBetween: 12,
     pagination: {
         el: '.mySwiper-serviceprices .swiper-pagination',
         clickable: true,

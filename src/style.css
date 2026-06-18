@@ -473,7 +473,6 @@ html, body {
     box-sizing: border-box;
     text-decoration: none;
     padding: 16px;
-    position: relative;
     gap: 4px;
 }
 .serviceprices-card__service,
@@ -482,15 +481,21 @@ html, body {
     font-size: 13px;
     color: #7E7E82;
 }
-.serviceprices-card__name {
-    font-size: 16px;
-    font-weight: 500;
-    color: #1B1C21;
-}
+
+.serviceprices-card__name,
 .serviceprices-card__price,
 .serviceprices-card__time {
     font-size: 16px;
     color: #1B1C21;
+}
+.serviceprices-card__name {
+    font-weight: 500;
+}
+.serviceprices-card__time-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
 }
 .serviceprices-card__goside {
     margin-top: 8px;
@@ -506,7 +511,6 @@ html, body {
     font-size: 12px;
     cursor: pointer;
     align-self: flex-end;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -565,6 +569,7 @@ html, body {
     display: inline-flex;
     font-size: 16px;
     font-weight: 500;
+    font-family: 'TTLakes', sans-serif;
 }
 .footer {
     font-size: 14px;
@@ -574,9 +579,10 @@ html, body {
     justify-content: space-between;
     margin-top: 40px;
     padding: 24px 0;
+}
+.footer__offter {
     
 }
-
 
 
 @media (min-width: 320px) {
@@ -598,8 +604,8 @@ html, body {
     #showBrands, #hideBrands {
         display: none !important;
     }
-    .prices-table__header {
-        display: none;
+    .mySwiper-serviceprices .swiper-pagination {
+        display: block !important;
     }
 }
 
@@ -631,6 +637,9 @@ html, body {
     }
     .prices-table__header {
         display: none;
+    }
+    .mySwiper-serviceprices .swiper-pagination {
+        display: none !important;
     }
 }
 
@@ -690,10 +699,7 @@ html, body {
         height: 100vh;
         flex-shrink: 0;
     }
-}
 
-/* На десктопе таблица видна, свайпер скрыт */
-@media (min-width: 1120px) {
     .prices-table {
         display: block;
         background: white;
@@ -756,3 +762,5 @@ html, body {
         opacity: 0.9;
     }
 }
+
+/* На десктопе таблица видна, свайпер скрыт */
