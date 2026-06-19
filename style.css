@@ -428,7 +428,7 @@ html, body {
 }
 .brands-hidden {
     display: none;
-    grid-template-columns: repeat(4, 255px);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 0;
     padding: 0;
@@ -630,10 +630,6 @@ html, body {
     }
     .site-header__divider-2 {
         display: block;
-    }
-    .brands-card, .brands-hidden {
-        width: 240px;
-        height: 72px;
     }
     .commercial-offer-more {
         text-align: left;
