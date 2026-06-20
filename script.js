@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var swiper = new Swiper(".mySwiper-brands", {
         slidesPerView: 0.9,
         spaceBetween: 16,
+        allowTouchMove: true,
         pagination: { 
             el: ".mySwiper-brands .swiper-pagination", 
             clickable: true },
@@ -52,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             768: { 
                 slidesPerView: 3, 
                 spaceBetween: 10, 
+
                 grid: { rows: 2, fill: "row" } 
             },
             1120: { 
@@ -60,25 +62,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 grid: { rows: 2, fill: "row" } 
             },
         },
+        on: {
+        breakpoint: function(swiper) {
+            if (window.innerWidth >= 768) {
+                swiper.allowTouchMove = false;
+            } else {
+                swiper.allowTouchMove = true;
+            }
+        }
+    }
     });
 
     var showBrands = document.getElementById("showBrands");
     var hideBrands = document.getElementById("hideBrands");
-    var brandsHidden = document.getElementById("brandsHidden");
-
+    var swiperBrandsEl = document.querySelector('.mySwiper-brands');
     if (showBrands) showBrands.addEventListener('click', function() {
-        brandsHidden.classList.add('show');
+        swiperBrandsEl.classList.add('show-all');
         showBrands.style.display = 'none';
         hideBrands.style.display = 'inline-flex';
     });
     if (hideBrands) hideBrands.addEventListener('click', function() {
-        brandsHidden.classList.remove('show');
+        swiperBrandsEl.classList.remove('show-all');
         hideBrands.style.display = 'none';
         showBrands.style.display = 'inline-flex';
     });
 
     // SWIPER DEVICES
     var swiperDevices = new Swiper('.mySwiper-devices', {
+        allowTouchMove: true,
         pagination: { 
             el: '.mySwiper-devices .swiper-pagination', 
             clickable: true },
@@ -90,11 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
             768: { 
                 slidesPerView: 3, 
                 spaceBetween: 10,
+                allowTouchMove: false,
                 grid: { rows: 1, fill: "row" } 
             },
             1120: { 
                 slidesPerView: 4, 
                 spaceBetween: 15,
+                allowTouchMove: false,
                 grid: { rows: 2, fill: "row" } 
             },
         },
@@ -102,52 +115,62 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var showDevices = document.getElementById("showDevices");
     var hideDevices = document.getElementById("hideDevices");
-    var devicesHidden = document.getElementById("devicesHidden");
-
+    var swiperDevicesEl = document.querySelector('.mySwiper-devices');
     if (showDevices) showDevices.addEventListener('click', function() {
-        devicesHidden.classList.add('show');
+        swiperDevicesEl.classList.add('show-all');
         showDevices.style.display = 'none';
         hideDevices.style.display = 'inline-flex';
     });
     if (hideDevices) hideDevices.addEventListener('click', function() {
-        devicesHidden.classList.remove('show');
+        swiperDevicesEl.classList.remove('show-all');
         hideDevices.style.display = 'none';
         showDevices.style.display = 'inline-flex';
     });
 
     // SWIPER SERVICE PRICES
     var swiperServicePrices = new Swiper('.mySwiper-serviceprices', {
-        slidesPerView: 0.9,
-        spaceBetween: 16,
-        pagination: { 
-            el: '.mySwiper-serviceprices .swiper-pagination', 
-            clickable: true 
+    slidesPerView: 1,
+    spaceBetween: 12,
+    pagination: { 
+        el: '.mySwiper-serviceprices .swiper-pagination', 
+        clickable: true 
+    },
+    breakpoints: {
+        768: { 
+            slidesPerView: 3, 
+            spaceBetween: 10,
         },
-        breakpoints: {
-            768: { 
-                slidesPerView: 3, 
-                spaceBetween: 10 
-            },
-            1120: { 
-                slidesPerView: 4, 
-                spaceBetween: 15 
-            },
+        1120: { 
+            slidesPerView: 4, 
+            spaceBetween: 15,
         },
-    });
+    },
+    on: {
+        breakpoint: function(swiper) {
+            if (window.innerWidth >= 768) {
+                swiper.allowTouchMove = false;
+            } else {
+                swiper.allowTouchMove = true;
+            }
+        }
+    }
+});
 
     var showServicePrices = document.getElementById('showServicePrices');
     var hideServicePrices = document.getElementById('hideServicePrices');
-    var servicePricesHidden = document.getElementById('ServicePricesHidden');
-
+    var swiperServiceEl = document.querySelector('.mySwiper-serviceprices');
+    
     if (showServicePrices) showServicePrices.addEventListener('click', function() {
-        servicePricesHidden.classList.add('show');
+        swiperServiceEl.classList.add('show-all');
         showServicePrices.style.display = 'none';
         hideServicePrices.style.display = 'inline-flex';
     });
+    
     if (hideServicePrices) hideServicePrices.addEventListener('click', function() {
-        servicePricesHidden.classList.remove('show');
+        swiperServiceEl.classList.remove('show-all');
         hideServicePrices.style.display = 'none';
         showServicePrices.style.display = 'inline-flex';
     });
+
 
 });

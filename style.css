@@ -387,6 +387,9 @@ html, body {
 .mySwiper-brands, .mySwiper-devices {
     padding-bottom: 30px !important;
 }
+.mySwiper-serviceprices {
+    padding-bottom: 40px !important;
+}
 
 .swiper {
     overflow: hidden;
@@ -498,8 +501,9 @@ html, body {
 .serviceprices-card {
     display: flex;
     flex-direction: column;
-    width: 260px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    min-height: 200px;
     background: #FFFFFF;
     border-radius: 6px;
     border: 1px solid #EAEAEA;
@@ -560,7 +564,6 @@ html, body {
 .serviceprices-hidden.show {
     display: grid;
 }
-
 
 
 .expand-all {
@@ -634,6 +637,9 @@ html, body {
     .commercial-offer-more {
         text-align: left;
     }
+    .prices-table__header {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
@@ -690,8 +696,63 @@ html, body {
     .mySwiper-serviceprices .swiper-pagination {
         display: none !important;
     }
-
 }
+
+
+@media (min-width: 768px) {
+    /* БРЕНДЫ — показываем 6, скрываем остальные */
+    .mySwiper-brands .swiper-wrapper {
+        flex-wrap: wrap;
+        transform: none !important;
+    }
+    .mySwiper-brands .swiper-slide {
+        width: calc(33.333% - 7px) !important;
+        margin-bottom: 10px;
+    }
+    .mySwiper-brands .swiper-slide:nth-child(n+7) {
+        display: none;
+    }
+    .mySwiper-brands.show-all .swiper-slide:nth-child(n+7) {
+        display: block;
+    }
+
+
+    /* ТЕХНИКИ — показываем 3, скрываем остальные */
+    .mySwiper-devices .swiper-wrapper {
+        flex-wrap: wrap;
+        transform: none !important;
+    }
+    .mySwiper-devices .swiper-slide {
+        width: calc(33.333% - 7px) !important;
+        margin-bottom: 10px;
+    }
+    .mySwiper-devices .swiper-slide:nth-child(n+4) {
+        display: none;
+    }
+    .mySwiper-devices.show-all .swiper-slide:nth-child(n+4) {
+        display: block;
+    }
+
+
+    /* ЦЕНЫ — показываем 3, скрываем остальные */
+    .mySwiper-serviceprices .swiper-wrapper {
+        flex-wrap: wrap;
+        transform: none !important;
+    }
+    .mySwiper-serviceprices .swiper-slide {
+        width: calc(33.333% - 7px) !important;
+        margin-bottom: 10px;
+    }
+    /* скрываем 4-ю и 5-ю карточки */
+    .mySwiper-serviceprices .swiper-slide:nth-child(n+4) {
+        display: none;
+    }
+    /* когда показать все */
+    .mySwiper-serviceprices.show-all .swiper-slide:nth-child(n+4) {
+        display: block;
+    }
+}
+
 
 @media (min-width: 768px) and (max-width: 1119px) {
     .brands-hidden {
