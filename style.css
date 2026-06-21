@@ -696,65 +696,12 @@ html, body {
     .mySwiper-serviceprices .swiper-pagination {
         display: none !important;
     }
-}
-
-
-@media (min-width: 768px) {
-    /* БРЕНДЫ — показываем 6, скрываем остальные */
-    .mySwiper-brands .swiper-wrapper {
-        flex-wrap: wrap;
-        transform: none !important;
-    }
-    .mySwiper-brands .swiper-slide {
-        width: calc(33.333% - 7px) !important;
-        margin-bottom: 10px;
-    }
-    .mySwiper-brands .swiper-slide:nth-child(n+7) {
-        display: none;
-    }
-    .mySwiper-brands.show-all .swiper-slide:nth-child(n+7) {
-        display: block;
+    .mySwiper-brands,
+    .mySwiper-devices,
+    .mySwiper-serviceprices {
+        overflow: visible !important;
     }
 
-
-    /* ТЕХНИКИ — показываем 3, скрываем остальные */
-    .mySwiper-devices .swiper-wrapper {
-        flex-wrap: wrap;
-        transform: none !important;
-    }
-    .mySwiper-devices .swiper-slide {
-        width: calc(33.333% - 7px) !important;
-        margin-bottom: 10px;
-    }
-    .mySwiper-devices .swiper-slide:nth-child(n+4) {
-        display: none;
-    }
-    .mySwiper-devices.show-all .swiper-slide:nth-child(n+4) {
-        display: block;
-    }
-
-
-    /* ЦЕНЫ — показываем 3, скрываем остальные */
-    .mySwiper-serviceprices .swiper-wrapper {
-        flex-wrap: wrap;
-        transform: none !important;
-    }
-    .mySwiper-serviceprices .swiper-slide {
-        width: calc(33.333% - 7px) !important;
-        margin-bottom: 10px;
-    }
-    /* скрываем 4-ю и 5-ю карточки */
-    .mySwiper-serviceprices .swiper-slide:nth-child(n+4) {
-        display: none;
-    }
-    /* когда показать все */
-    .mySwiper-serviceprices.show-all .swiper-slide:nth-child(n+4) {
-        display: block;
-    }
-}
-
-
-@media (min-width: 768px) and (max-width: 1119px) {
     .brands-hidden {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -772,17 +719,84 @@ html, body {
 
 }
 
+
+
+@media (min-width: 768px) and (max-width: 1119px) {
+    /* БРЕНДЫ */
+    .mySwiper-brands .swiper-wrapper {
+        flex-wrap: wrap !important;;
+        transform: none !important;
+        gap: 10px;
+    }
+    .mySwiper-brands {
+    width: 100%;
+}
+    .mySwiper-brands .swiper-slide {
+        width: 240px !important;
+        height: 72px;
+        margin: 0 !important;
+    }
+    .mySwiper-brands .swiper-slide:nth-child(n+7) {
+        display: none;
+    }
+    .mySwiper-brands.show-all .swiper-slide:nth-child(n+7) {
+        display: block;
+    }
+
+
+    /* ТЕХНИКИ */
+    .mySwiper-devices .swiper-wrapper {
+        flex-wrap: wrap !important;
+        transform: none !important;
+        gap: 10px;
+    }
+    .mySwiper-devices .swiper-slide {
+        width: 240px !important;
+        height: 160px;
+        margin: 0 !important;
+    }
+    .mySwiper-devices .swiper-slide:nth-child(n+4) {
+        display: none;
+    }
+    .mySwiper-devices.show-all .swiper-slide:nth-child(n+4) {
+        display: block;
+    }
+
+
+    /* ЦЕНЫ */
+    .mySwiper-serviceprices .swiper-wrapper {
+        flex-wrap: wrap;
+        transform: none !important;
+        gap: 10px;
+    }
+    .mySwiper-serviceprices .swiper-slide {
+        width: 260px !important;
+        height: 200px;
+        margin: 0 !important;
+    }
+    /* скрываем 4-ю и 5-ю карточки */
+    .mySwiper-serviceprices .swiper-slide:nth-child(n+4) {
+        display: none;
+    }
+    /* когда показать все */
+    .mySwiper-serviceprices.show-all .swiper-slide:nth-child(n+4) {
+        display: block;
+    }
+
+}
+
 @media (min-width: 1120px) {
     body {
         display: flex;
     }
-
-
-
     .sidebar {
         box-shadow: none;
         height: 100vh;
         overflow-y: auto;
+        position: sticky;
+        top: 0;
+        left: 0;
+        flex-shrink: 0;
     }
     .sidebar-overlay {
         display: none !important;
@@ -815,20 +829,41 @@ html, body {
     .site-header {
         display: none;
     }
-    
-    .sidebar {
-        position: sticky;
-        top: 0;
-        left: 0;          
-        height: 100vh;
-        flex-shrink: 0;
-    }
-
     .tabs__list {
         flex-wrap: nowrap;
         overflow-x: visible;
     }
+    .mySwiper-brands,
+    .mySwiper-devices {
+        overflow: visible !important;
+    }
 
+
+    .mySwiper-brands .swiper-wrapper {
+        flex-wrap: wrap !important;
+        transform: none !important;
+        gap: 15px;
+    }
+    .mySwiper-brands .swiper-slide {
+        width: 240px !important;
+        height: 72px;
+        margin: 0 !important;
+    }
+
+     /* ТЕХНИКА */
+    .mySwiper-devices .swiper-wrapper {
+        flex-wrap: wrap !important;
+        transform: none !important;
+        gap: 15px;
+    }
+    .mySwiper-devices .swiper-slide {
+        width: 240px !important;
+        height: 160px;
+        margin: 0 !important;
+    }
+
+
+    /* ЦЕНЫ — таблица */
     .prices-table {
         display: block;
         background: white;
@@ -838,8 +873,7 @@ html, body {
     }
     .mySwiper-serviceprices,
     #showServicePrices,
-    #hideServicePrices,
-    #ServicePricesHidden {
+    #hideServicePrices {
         display: none !important;
     }
     .prices-table__header {
@@ -863,9 +897,8 @@ html, body {
         color: #1B1C21;
     }
     .prices-table__row:last-child {
-    border-bottom: none;
+        border-bottom: none;
     }
-
     .prices-table__goside {
         display: inline-flex;
         align-items: center;
@@ -886,9 +919,6 @@ html, body {
     .prices-table__goside-icon {
         width: 24px;
         height: 24px;
-    }
-    .prices-table__btn:hover {
-        opacity: 0.9;
     }
 
     .footer {

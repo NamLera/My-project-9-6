@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // SWIPER BRANDS
     var swiper = new Swiper(".mySwiper-brands", {
-        slidesPerView: 0.9,
-        spaceBetween: 16,
+        slidesPerView: 1,
+        spaceBetween: 12,
         allowTouchMove: true,
         pagination: { 
             el: ".mySwiper-brands .swiper-pagination", 
@@ -50,27 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesPerView: 1,
             spaceBetween: 12,
             },
-            768: { 
-                slidesPerView: 3, 
-                spaceBetween: 10, 
-
-                grid: { rows: 2, fill: "row" } 
-            },
-            1120: { 
-                slidesPerView: 4, 
-                spaceBetween: 15, 
-                grid: { rows: 2, fill: "row" } 
-            },
-        },
-        on: {
-        breakpoint: function(swiper) {
-            if (window.innerWidth >= 768) {
-                swiper.allowTouchMove = false;
-            } else {
-                swiper.allowTouchMove = true;
-            }
         }
-    }
     });
 
     var showBrands = document.getElementById("showBrands");
@@ -80,15 +60,19 @@ document.addEventListener('DOMContentLoaded', function () {
         swiperBrandsEl.classList.add('show-all');
         showBrands.style.display = 'none';
         hideBrands.style.display = 'inline-flex';
+        applyLimits();
     });
     if (hideBrands) hideBrands.addEventListener('click', function() {
         swiperBrandsEl.classList.remove('show-all');
         hideBrands.style.display = 'none';
         showBrands.style.display = 'inline-flex';
+        applyLimits();
     });
 
     // SWIPER DEVICES
     var swiperDevices = new Swiper('.mySwiper-devices', {
+        slidesPerView: 1,
+        spaceBetween: 12,
         allowTouchMove: true,
         pagination: { 
             el: '.mySwiper-devices .swiper-pagination', 
@@ -97,20 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
             320: { 
                 slidesPerView: 1, 
                 spaceBetween: 12,
-            },
-            768: { 
-                slidesPerView: 3, 
-                spaceBetween: 10,
-                allowTouchMove: false,
-                grid: { rows: 1, fill: "row" } 
-            },
-            1120: { 
-                slidesPerView: 4, 
-                spaceBetween: 15,
-                allowTouchMove: false,
-                grid: { rows: 2, fill: "row" } 
-            },
-        },
+            }
+        }
     });
 
     var showDevices = document.getElementById("showDevices");
@@ -120,40 +92,38 @@ document.addEventListener('DOMContentLoaded', function () {
         swiperDevicesEl.classList.add('show-all');
         showDevices.style.display = 'none';
         hideDevices.style.display = 'inline-flex';
+        applyLimits();
     });
     if (hideDevices) hideDevices.addEventListener('click', function() {
         swiperDevicesEl.classList.remove('show-all');
         hideDevices.style.display = 'none';
         showDevices.style.display = 'inline-flex';
+        applyLimits();
     });
 
     // SWIPER SERVICE PRICES
     var swiperServicePrices = new Swiper('.mySwiper-serviceprices', {
     slidesPerView: 1,
     spaceBetween: 12,
+    allowTouchMove: true,
     pagination: { 
         el: '.mySwiper-serviceprices .swiper-pagination', 
         clickable: true 
     },
     breakpoints: {
-        768: { 
-            slidesPerView: 3, 
-            spaceBetween: 10,
-        },
-        1120: { 
-            slidesPerView: 4, 
-            spaceBetween: 15,
-        },
-    },
-    on: {
-        breakpoint: function(swiper) {
-            if (window.innerWidth >= 768) {
-                swiper.allowTouchMove = false;
-            } else {
-                swiper.allowTouchMove = true;
-            }
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 12 
         }
-    }
+        //768: { 
+        //    slidesPerView: 3, 
+        //    spaceBetween: 10,
+        //},
+        //1120: { 
+        //    slidesPerView: 4, 
+        //    spaceBetween: 15,
+        //},
+    },
 });
 
     var showServicePrices = document.getElementById('showServicePrices');
@@ -164,13 +134,58 @@ document.addEventListener('DOMContentLoaded', function () {
         swiperServiceEl.classList.add('show-all');
         showServicePrices.style.display = 'none';
         hideServicePrices.style.display = 'inline-flex';
+        applyLimits();
     });
     
     if (hideServicePrices) hideServicePrices.addEventListener('click', function() {
         swiperServiceEl.classList.remove('show-all');
         hideServicePrices.style.display = 'none';
         showServicePrices.style.display = 'inline-flex';
+        applyLimits();
     });
 
 
+    function applyLimits() {
+        var w = window.innerWidth;
+
+        var brandSlides = document.querySelectorAll('.mySwiper-brands .swiper-slide');
+        var brandExpanded = document.querySelector('.mySwiper-brands').classList.contains('show-all');
+        var deviceSlides = document.querySelectorAll('.mySwiper-devices .swiper-slide');
+        var deviceExpanded = document.querySelector('.mySwiper-devices').classList.contains('show-all');
+        var priceSlides = document.querySelectorAll('.mySwiper-serviceprices .swiper-slide');
+        var priceExpanded = document.querySelector('.mySwiper-serviceprices').classList.contains('show-all');
+
+        brandSlides.forEach(function(slide, i) {
+            if (w >= 768 && w < 1120) {
+                slide.style.display = (i >= 6 && !brandExpanded) ? 'none' : '';
+            } else if (w >= 1120) {
+                slide.style.display = (i >= 8 && !brandExpanded) ? 'none' : '';
+            } else {
+                slide.style.display = '';
+            }
+        });
+
+        deviceSlides.forEach(function(slide, i) {
+            if (w >= 768 && w < 1120) {
+                slide.style.display = (i >= 3 && !deviceExpanded) ? 'none' : '';
+            } else if (w >= 1120) {
+                slide.style.display = (i >= 4 && !deviceExpanded) ? 'none' : '';
+            } else {
+                slide.style.display = '';
+            }
+        });
+
+        priceSlides.forEach(function(slide, i) {
+            if (w >= 768 && w < 1120) {
+                slide.style.display = (i >= 3 && !priceExpanded) ? 'none' : '';
+            } else {
+                slide.style.display = '';
+            }
+        });
+    }
+
+    applyLimits();
+    window.addEventListener('resize', applyLimits);
+
+    
 });
