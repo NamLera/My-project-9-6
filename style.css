@@ -89,16 +89,16 @@ body {
   flex: 1;
   flex-direction: column;
 }
-.navigations {
+.sidebar__nav {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.navigation {
+.sidebar__nav-item {
   list-style: none;
 }
 
-.nav-link {
+.sidebar__link {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -107,7 +107,7 @@ body {
   color: #1b1c21;
   cursor: pointer;
 }
-.nav-indicator {
+.sidebar__link-indicator {
   display: block;
   width: 4px;
   height: 32px;
@@ -117,15 +117,15 @@ body {
   flex-shrink: 0;
 }
 
-.nav-link:hover .nav-indicator {
+.sidebar__link:hover .sidebar__link-indicator {
   background: #41f6d7;
 }
-.nav-link:hover {
+.sidebar__link:hover {
   color: #7e7e82;
 }
 
-.nav-link,
-.link {
+.sidebar__link,
+.sidebar__link-text {
   font-family: "TTLakes", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -224,7 +224,7 @@ body {
   border-radius: 1px;
 }
 
-.actions {
+.services-page__actions-text {
   display: flex;
   align-items: center;
   background: none;
@@ -238,7 +238,7 @@ body {
   cursor: pointer;
   transition: color 0.2 ease;
 }
-.actions:hover {
+.services-page__actions-text:hover {
   color: #7e7e82;
 }
 
@@ -279,7 +279,7 @@ body {
   scrollbar-width: none;
 }
 
-.taps__item {
+.tabs__item {
   background: transparent;
   border: 2px solid transparent;
   border-radius: 6px;
@@ -302,7 +302,7 @@ body {
   color: #7e7e82;
   background: #ffffff;
 }
-.taps__item.tabs__item--active {
+.tabs__item.tabs__item--active {
   background: #ffffff;
   border-color: #b8ffec;
   color: #1b1c21;
@@ -441,7 +441,7 @@ body {
   display: grid;
 }
 
-.swiper-card-logo {
+.brands-card__logo {
   align-self: center;
   border: none;
   background: none;
@@ -469,7 +469,7 @@ body {
   align-self: flex-end;
   padding: 1px 5px;
 }
-.swiper-card-text {
+.devices-card__text {
   font-family: "TTLakes", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -562,7 +562,7 @@ body {
   display: grid;
 }
 
-.expand-all {
+.brands-section__expand {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -637,6 +637,12 @@ body {
 }
 
 @media (max-width: 767px) {
+  .brands-section {
+    padding-right: 0;
+  }
+  .mySwiper-brands {
+    padding-right: 40px !important;
+  }
   .mySwiper-brands .swiper-slide {
     width: 240px !important;
     height: 72px;
@@ -669,6 +675,12 @@ body {
   #showServicePrices,
   #hideServicePrices {
     display: none !important;
+  }
+
+  .mySwiper-brands,
+  .mySwiper-devices,
+  .mySwiper-serviceprices {
+    overflow: hidden !important;
   }
 }
 

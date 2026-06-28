@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape") closeSidebar();
   });
 
-  const tabs = document.querySelectorAll(".taps__item");
+  const tabs = document.querySelectorAll(".tabs__item");
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       tabs.forEach(function (t) {
@@ -38,14 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // SWIPER BRANDS
   var swiper = new Swiper(".mySwiper-brands", {
-    slidesPerView: 1.2,
-    spaceBetween: 12,
+    slidesPerView: 1,
+    spaceBetween: 10,
     allowTouchMove: true,
     pagination: {
       el: ".mySwiper-brands .swiper-pagination",
       clickable: true,
     },
   });
+
 
   var showBrands = document.getElementById("showBrands");
   var hideBrands = document.getElementById("hideBrands");
